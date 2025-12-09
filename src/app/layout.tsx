@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Player Manager",
-  description: "Minimal Next.js app to manage your player roster",
+  title: "Rosater",
+  description: "Keep track of your players and their details",
 };
 
 export default function RootLayout({
