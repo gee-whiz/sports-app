@@ -25,10 +25,22 @@ export default function Home() {
   const [message, setMessage] = useState<Message | null>(null);
   const [saving, setSaving] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
+  const [filter, setFilter] = useState("");
 
   const sortedPlayers = useMemo(
-    () => [...players].sort((a, b) => (b.createdAt ?? "").localeCompare(a.createdAt ?? "")),
-    [players],
+    () =>
+      [...players]
+        .sort((a, b) => (b.createdAt ?? "").localeCompare(a.createdAt ?? ""))
+        .filter((player) => {
+          if (!filter.trim()) return true;
+          const term = filter.toLowerCase();
+          return (
+            player.name.toLowerCase().includes(term) ||
+            (player.team ?? "").toLowerCase().includes(term) ||
+            (player.position ?? "").toLowerCase().includes(term)
+          );
+        }),
+    [players, filter],
   );
 
   const fetchPlayers = async () => {
@@ -130,6 +142,8 @@ export default function Home() {
           reset();
           setFormOpen(true);
         }}
+        filter={filter}
+        onFilterChange={setFilter}
       />
 
       {loadError ? (

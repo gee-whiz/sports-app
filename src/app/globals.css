@@ -42,6 +42,8 @@ a {
 .header-actions {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .eyebrow {
@@ -141,6 +143,10 @@ h1 {
 .button.danger {
   color: #b91c1c;
   border-color: #ef4444;
+}
+
+.search {
+  min-width: 200px;
 }
 
 .modal-backdrop {
