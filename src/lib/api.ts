@@ -16,7 +16,7 @@ export type PlayerInput = {
 };
 
 const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE ?? "https://sportsapp-wine.vercel.app";
+  process.env.NEXT_PUBLIC_API_BASE;
 
 const jsonHeaders = {
   "Content-Type": "application/json",

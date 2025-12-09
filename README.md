@@ -15,7 +15,7 @@ pnpm dev       # or npm run dev / yarn dev
 
 ### Config
 
-- `NEXT_PUBLIC_API_BASE` (optional): override the API base URL. Defaults to `https://sportsapp-wine.vercel.app`.
+- `NEXT_PUBLIC_API_BASE`
 
 ## Code map
 
